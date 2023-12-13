@@ -1,13 +1,11 @@
 
 
 
-export function MailPreview(mail){
-
-
+export function MailPreview({mail}){
 
     return(
         <section className="mail-preview">
-            {mail.id}
+           <p>{mail.id}</p> 
         </section>
     )
 }
