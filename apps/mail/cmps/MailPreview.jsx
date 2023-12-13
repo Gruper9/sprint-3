@@ -6,6 +6,7 @@ export function MailPreview({ mail, onRemoveMail, setReadMail }) {
 
 
     function onMailClicked(mail) {
+        
         setReadMail(mail)
         navigate(`/mail/${mail.id}`)
     }
@@ -20,4 +21,5 @@ export function MailPreview({ mail, onRemoveMail, setReadMail }) {
     )
 
 }
+
 
