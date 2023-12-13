@@ -1,23 +1,18 @@
-import { MailPreview } from "./MailPreview.jsx";
-
-const { useState } = React
 const { useNavigate } = ReactRouterDOM
 
-export function MailPreview({ mail }) {
-    const [mailIsRead, setMailIsRead] = useState(mail)
+export function MailPreview({mail}){
     const navigate = useNavigate()
+    const dynclass= mail.isRead === true ? 'read' : 'unread'
+  
+    // function openMail() {
+    //     setMailIsRead(prevMail=>({...prevMail, isRead: true}))
+    //     mailService.save(mailIsRead)
+    //     navigate(`/mail/${mail.id}`)
+    // }
 
-    function openMail() {
-        setMailIsRead(prevMail=>({...prevMail, isRead: true}))
-        mailService.save(mailIsRead)
-        navigate(`/mail/${mail.id}`)
-    }
-
-    const dynclass = mail.isRead === true ? 'read' : 'unread'
-    
-    return (
-        <section className={`mail-preview ${dynclass}`}>
-            <span onClick={openMail}>{mail.subject}</span>
+    return(
+     <section className={`mail-preview ${dynclass}`}>
+           <span onClick={()=>navigate(`/mail/${mail.id}`)}>{mail.subject}</span> 
         </section>
     )
 
