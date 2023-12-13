@@ -25,15 +25,15 @@ function remove(mailId) {
 }
 function save(mail) {
     if (mail.id) {
-        return asyncStorageService.put(MAIL_KEY, book)
+        return asyncStorageService.put(MAIL_KEY, mail)
     } else {
-        return asyncStorageService.post(MAIL_KEY, book)
+        return asyncStorageService.post(MAIL_KEY, mail)
     }
 }
 
 function query() {
     return asyncStorageService.query(MAIL_KEY)
-    }
+  }
 
 
 function getEmptyMail() {
@@ -42,7 +42,7 @@ function getEmptyMail() {
         subject: '',
         body: '',
         isRead: false,
-        sentAt: null,
+        sentAt: Date.now(),
         removedAt: null,
         from: '',
         to: ''
@@ -52,15 +52,61 @@ function getEmptyMail() {
 function _createMails() {
     let mails = storageService.loadFromStorage(MAIL_KEY)
     if (!mails || !mails.length) {
-        mails = [_createMail(), _createMail(), _createMail(), _createMail()]
-        storageService.saveToStorage(MAIL_KEY, mails)
-
+        mails = [
+            {
+                id:utilService.makeId(),
+              subject: 'Welcome to Gmail',
+              body: 'Hello! Welcome to Gmail. This is a sample email body text.',
+              isRead: false,
+              sentAt: Date.now(),
+              removedAt: null,
+              from: 'noreply@gmail.com',
+              to: 'user@example.com'
+            },
+            {
+                id:utilService.makeId(),
+              subject: 'Meeting Tomorrow',
+              body: 'Hi there! Let\'s meet tomorrow at 2:00 PM in the conference room.',
+              isRead: true,
+              sentAt: Date.now() - 86400000, // 24 hours ago
+              removedAt: null,
+              from: 'colleague@example.com',
+              to: 'user@example.com'
+            },
+            {
+                id:utilService.makeId(),
+              subject: 'Your Shopping Cart',
+              body: 'Your shopping cart items are waiting for you. Complete your purchase now!',
+              isRead: true,
+              sentAt: Date.now() - 172800000, // 48 hours ago
+              removedAt: null,
+              from: 'shopping@example.com',
+              to: 'user@example.com'
+            },
+            {
+                id:utilService.makeId(),
+              subject: 'Important Update',
+              body: 'Please review the attached document for an important update.',
+              isRead: false,
+              sentAt: Date.now() - 259200000, // 72 hours ago
+              removedAt: null,
+              from: 'boss@example.com',
+              to: 'user@example.com'
+            },
+            {
+                id:utilService.makeId(),
+              subject: 'Feedback Request',
+              body: 'We value your feedback. Please take a moment to share your thoughts with us.',
+              isRead: true,
+              sentAt: Date.now() - 345600000, // 96 hours ago
+              removedAt: null,
+              from: 'feedback@example.com',
+              to: 'user@example.com'
+            }
+          ]
+          
+          storageService.saveToStorage(MAIL_KEY, mails)
+        }
     }
-}
 
 
-function _createMail() {
-    const mail = getEmptyMail()
-    mail.id=utilService.makeId()
-    return mail
-}
