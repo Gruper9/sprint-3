@@ -29,6 +29,6 @@ export function MailIndex() {
             </section>
         )
     } else {
-        return (<p>Loading books...</p>)
+        return (<p>Loading Mails...</p>)
     }
 }

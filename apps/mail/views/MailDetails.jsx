@@ -23,7 +23,7 @@ export function MailDetails(){
                 navigate('/')
             })
     }
-if(!mailToShow.from) return (<p>Loading books...</p>)
+if(!mailToShow.from) return (<p>Loading Mails...</p>)
 return(
     <section className="mail-details">
     <h2>{mailToShow.subject}</h2>
