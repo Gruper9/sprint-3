@@ -23,7 +23,7 @@ export function MailDetails() {
                 navigate('/')
             })
     }
-    if (!mailToShow.subject) return (<span className="loader"></span>)
+    if (mailToShow.subject){
     return (
         <section className="mail-details">
               {!mailToShow.isRead && <i className="fa-regular fa-envelope"></i>}  
@@ -33,6 +33,8 @@ export function MailDetails() {
             <h4>from: {mailToShow.from}</h4>
             <button onClick={() => navigate('/mail')}>back</button>
         </section>
-    )
+    )}else {
+        return (<span className="loader"></span>)
+    }
 
 }
