@@ -10,6 +10,7 @@ export function MailList({ mails, loadMails }) {
             .catch(err => console.log('err: ', err))
 
     }
+    
     function setReadMail(mail) {
         mail.isRead = true
         mailService.save(mail)

@@ -1,6 +1,7 @@
 import { MailList } from "../cmps/MailList.jsx"
 import { mailService } from "../services/mail.service.js"
 
+const { Link } = ReactRouterDOM
 const { useState, useEffect } = React
 
 export function MailIndex() {
@@ -25,6 +26,7 @@ export function MailIndex() {
             <section className="mail-index">
                 {console.log(mails)}
                 <h1>Welcome to Gruper Mail! (Gmail 2.0)</h1>
+                <button><Link to="/mail/compose">Compose</Link></button>
                 <MailList mails={mails} loadMails={loadMails} />
             </section>
         )

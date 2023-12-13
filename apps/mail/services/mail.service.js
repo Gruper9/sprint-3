@@ -4,7 +4,10 @@ import { asyncStorageService } from "../../../services/async-storage.service.js"
 import { utilService } from "../../../services/util.service.js"
 
 const MAIL_KEY = 'mailDB'
-
+const logedInUser={
+    email: 'gruper@test.lol',
+    fullName: 'Hadar Gruper'
+}
 
 export const mailService = {
     save,
@@ -38,13 +41,12 @@ function query() {
 
 function getEmptyMail() {
     return {
-
         subject: '',
         body: '',
         isRead: false,
         sentAt: Date.now(),
         removedAt: null,
-        from: '',
+        from: logedInUser.email,
         to: ''
     }
 }
@@ -61,7 +63,7 @@ function _createMails() {
               sentAt: Date.now(),
               removedAt: null,
               from: 'noreply@gmail.com',
-              to: 'user@example.com'
+              to: logedInUser.email
             },
             {
                 id:utilService.makeId(),
@@ -71,7 +73,7 @@ function _createMails() {
               sentAt: Date.now() - 86400000, // 24 hours ago
               removedAt: null,
               from: 'colleague@example.com',
-              to: 'user@example.com'
+              to: logedInUser.email
             },
             {
                 id:utilService.makeId(),
@@ -81,7 +83,7 @@ function _createMails() {
               sentAt: Date.now() - 172800000, // 48 hours ago
               removedAt: null,
               from: 'shopping@example.com',
-              to: 'user@example.com'
+              to: logedInUser.email
             },
             {
                 id:utilService.makeId(),
@@ -91,7 +93,7 @@ function _createMails() {
               sentAt: Date.now() - 259200000, // 72 hours ago
               removedAt: null,
               from: 'boss@example.com',
-              to: 'user@example.com'
+              to: logedInUser.email
             },
             {
                 id:utilService.makeId(),
@@ -101,7 +103,7 @@ function _createMails() {
               sentAt: Date.now() - 345600000, // 96 hours ago
               removedAt: null,
               from: 'feedback@example.com',
-              to: 'user@example.com'
+              to: logedInUser.email
             }
           ]
           
