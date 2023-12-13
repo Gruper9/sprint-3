@@ -41,7 +41,7 @@ export function MailFilter({ filterBy, onSetFilter }) {
 
     return (
         <section className="mail-filter">
-            <h2>Filter Your mails</h2>
+           
             <form onSubmit={onSetFilterBy} >
                 <label htmlFor="txt">search: </label>
                 <input value={txt} onChange={handleChange} type="text"  name="txt" />
