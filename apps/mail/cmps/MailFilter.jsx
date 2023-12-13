@@ -16,8 +16,8 @@ export function MailFilter({ filterBy, onSetFilter }) {
 
     function handleChange(event) {
         const target = event.target
-        const field = target.name //txt / minPrice
-        let value = target.value // always str
+        const field = target.name 
+        let value = target.value 
 
         switch (target.type) {
             case 'number':
@@ -33,7 +33,7 @@ export function MailFilter({ filterBy, onSetFilter }) {
                 break
         }
 
-        setFilterByToEdit(prevFilter => ({ ...prevFilter, [field]: value }))
+        setFilterByToEdit(prevFilter => ({ ...prevFilter, [field]: value}))
     }
 
 
@@ -43,8 +43,7 @@ export function MailFilter({ filterBy, onSetFilter }) {
         <section className="mail-filter">
            
             <form onSubmit={onSetFilterBy} >
-                <label htmlFor="txt">search: </label>
-                <input value={txt} onChange={handleChange} type="text"  name="txt" />
+                <input value={txt} onChange={handleChange} type="text"  name="txt" placeholder="search in your inbox"/>
     
             </form>
         </section>

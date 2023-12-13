@@ -43,6 +43,7 @@ function save(mail) {
 
 
   function query(filterBy) {
+    console.log(filterBy);
     return asyncStorageService.query(MAIL_KEY)
         .then(mails => {
             if (filterBy.txt) {
