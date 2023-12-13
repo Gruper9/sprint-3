@@ -23,7 +23,7 @@ export function MailDetails() {
                 navigate('/')
             })
     }
-    if (!mailToShow.from) return (<span className="loader"></span>)
+    if (!mailToShow.subject) return (<span className="loader"></span>)
     return (
         <section className="mail-details">
               {!mailToShow.isRead && <i className="fa-regular fa-envelope"></i>}  
