@@ -26,6 +26,8 @@ export function MailDetails() {
     if (!mailToShow.from) return (<span className="loader"></span>)
     return (
         <section className="mail-details">
+              {!mailToShow.isRead && <i class="fa-regular fa-envelope"></i>}  
+            {mailToShow.isRead && <i class="fa-regular fa-envelope-open"></i>}
             <h2>{mailToShow.subject}</h2>
             <p>{mailToShow.body}</p>
             <h4>from: {mailToShow.from}</h4>

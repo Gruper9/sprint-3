@@ -67,7 +67,7 @@ function _createMails() {
                 id:utilService.makeId(),
               subject: 'Meeting Tomorrow',
               body: 'Hi there! Let\'s meet tomorrow at 2:00 PM in the conference room.',
-              isRead: true,
+              isRead: false,
               sentAt: Date.now() - 86400000, // 24 hours ago
               removedAt: null,
               from: 'colleague@example.com',
@@ -77,7 +77,7 @@ function _createMails() {
                 id:utilService.makeId(),
               subject: 'Your Shopping Cart',
               body: 'Your shopping cart items are waiting for you. Complete your purchase now!',
-              isRead: true,
+              isRead: false,
               sentAt: Date.now() - 172800000, // 48 hours ago
               removedAt: null,
               from: 'shopping@example.com',
@@ -97,7 +97,7 @@ function _createMails() {
                 id:utilService.makeId(),
               subject: 'Feedback Request',
               body: 'We value your feedback. Please take a moment to share your thoughts with us.',
-              isRead: true,
+              isRead: false,
               sentAt: Date.now() - 345600000, // 96 hours ago
               removedAt: null,
               from: 'feedback@example.com',
