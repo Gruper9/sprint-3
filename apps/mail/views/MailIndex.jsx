@@ -25,7 +25,7 @@ export function MailIndex() {
             <section className="mail-index">
                 {console.log(mails)}
                 <h1>Welcome to Gruper Mail! (Gmail 2.0)</h1>
-                <MailList mails={mails} />
+                <MailList mails={mails} loadMails={loadMails} />
             </section>
         )
     } else {
