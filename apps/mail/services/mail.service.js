@@ -14,10 +14,17 @@ export const mailService = {
     remove,
     get,
     query,
-    getEmptyMail
+    getEmptyMail,
+    getDefaultFilter
 }
-
 _createMails()
+
+
+
+
+function getDefaultFilter() {
+    return { txt: '' }
+}
 
 function get(mailId) {
     return asyncStorageService.get(MAIL_KEY, mailId)
@@ -34,9 +41,17 @@ function save(mail) {
     }
 }
 
-function query() {
+
+  function query(filterBy) {
     return asyncStorageService.query(MAIL_KEY)
-  }
+        .then(mails => {
+            if (filterBy.txt) {
+                const regExp = new RegExp(filterBy.txt, 'i')
+                mails = mails.filter(mail => regExp.test(mail.subject))
+            }    
+            return mails
+        })
+}
 
 
 function getEmptyMail() {
