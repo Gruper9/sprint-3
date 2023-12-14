@@ -1,14 +1,20 @@
-
-export function MailPreview({ mail, onRemoveMail, setReadMail }) {
-
+const {useState}=React
+export function MailPreview({ mail, onRemoveMail, setReadMail,setMailStar }) {
+    const [star, setStar] = useState(mail.isStar)
     const dynclass = mail.isRead === true ? 'read' : 'unread'
 
-
-
+    function updateMailStar(mail) {
+        setStar(!mail.isStar)
+        setReadMail(mail)
+    
+    }
+    
     return (
         <section className={`mail-preview ${dynclass}`}>
-            <span onClick={() => setReadMail(mail)}>{mail.subject}</span>
 
+            {star ?<i className="fa-solid fa-star" onClick={() => updateMailStar(mail)} ></i> : <i className="fa-regular fa-star" onClick={() => updateMailStar(mail)}></i>}
+
+            <span onClick={() => setReadMail(mail)}>{mail.subject}</span>
             {!mail.isRead && <i className="fa-regular fa-envelope"></i>}  
             {mail.isRead && <i className="fa-regular fa-envelope-open"></i>}
              <button onClick={() => onRemoveMail(mail.id)}>x</button>
