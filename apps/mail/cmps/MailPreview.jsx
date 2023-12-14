@@ -1,14 +1,13 @@
 const {useState}=React
-export function MailPreview({ mail, onRemoveMail, setReadMail,setMailStar }) {
+export function MailPreview({ mail, onRemoveMail, setReadMail, setMailStar }) {
     const [star, setStar] = useState(mail.isStar)
     const dynclass = mail.isRead === true ? 'read' : 'unread'
 
     function updateMailStar(mail) {
         setStar(!mail.isStar)
-        setReadMail(mail)
-    
+        setMailStar(mail)
     }
-    
+
     return (
         <section className={`mail-preview ${dynclass}`}>
 
@@ -22,5 +21,3 @@ export function MailPreview({ mail, onRemoveMail, setReadMail,setMailStar }) {
     )
 
 }
-
-
