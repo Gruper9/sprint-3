@@ -4,6 +4,7 @@ import { asyncStorageService } from "../../../services/async-storage.service.js"
 import { utilService } from "../../../services/util.service.js"
 
 const MAIL_KEY = 'mailDB'
+const folders=['Inbox','Sent','Trash','Starred','Drafts']
 const logedInUser={
     email: 'gruper@test.lol',
     fullName: 'Hadar Gruper'
@@ -15,12 +16,15 @@ export const mailService = {
     get,
     query,
     getEmptyMail,
-    getDefaultFilter
+    getDefaultFilter,
+    getFolders
 }
 _createMails()
 
 
-
+function getFolders(){
+    return folders
+}
 
 function getDefaultFilter() {
     return { txt: '' }
@@ -43,7 +47,6 @@ function save(mail) {
 
 
   function query(filterBy) {
-    console.log(filterBy);
     return asyncStorageService.query(MAIL_KEY)
         .then(mails => {
             if (filterBy.txt) {
