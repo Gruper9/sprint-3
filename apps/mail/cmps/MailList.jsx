@@ -33,9 +33,9 @@ export function MailList({ mails, loadMails }) {
         <section className="mail-list">
 
             {mails && mails.map((mail) => (
-                <div key={mail.id} className="mail-item " >
-                    <MailPreview mail={mail} onRemoveMail={onRemoveMail} setReadMail={setReadMail}  setMailStar={setMailStar}/>
-                </div>
+                
+                    <MailPreview key={mail.id} mail={mail} onRemoveMail={onRemoveMail} setReadMail={setReadMail}  setMailStar={setMailStar}/>
+                
             ))
             }
 

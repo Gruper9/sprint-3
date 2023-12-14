@@ -5,16 +5,13 @@
 .mail-preview{
     padding: 0.5em;
     border: 1px solid grey;
+    border-radius: 11px;
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+    background-color: #98989815;
+    width: 98%;
 }
 .mail-preview:hover{
     border: 1px solid #000000;
     font-weight: bold;
-
-}
-.mail-item{
-    
-    width: 100%;
+    background-color: #9898984a;
 }
