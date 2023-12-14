@@ -63,6 +63,7 @@ function getEmptyMail() {
         subject: '',
         body: '',
         isRead: false,
+        isStar: false,
         sentAt: Date.now(),
         removedAt: null,
         from: logedInUser.email,
@@ -79,6 +80,7 @@ function _createMails() {
               subject: 'Welcome to Gmail',
               body: 'Hello! Welcome to Gmail. This is a sample email body text.',
               isRead: false,
+              isStar: false,
               sentAt: Date.now(),
               removedAt: null,
               from: 'noreply@gmail.com',
@@ -89,6 +91,7 @@ function _createMails() {
               subject: 'Meeting Tomorrow',
               body: 'Hi there! Let\'s meet tomorrow at 2:00 PM in the conference room.',
               isRead: false,
+              isStar: false,
               sentAt: Date.now() - 86400000, // 24 hours ago
               removedAt: null,
               from: 'colleague@example.com',
@@ -99,6 +102,7 @@ function _createMails() {
               subject: 'Your Shopping Cart',
               body: 'Your shopping cart items are waiting for you. Complete your purchase now!',
               isRead: false,
+              isStar: false,
               sentAt: Date.now() - 172800000, // 48 hours ago
               removedAt: null,
               from: 'shopping@example.com',
@@ -109,6 +113,7 @@ function _createMails() {
               subject: 'Important Update',
               body: 'Please review the attached document for an important update.',
               isRead: false,
+              isStar: false,
               sentAt: Date.now() - 259200000, // 72 hours ago
               removedAt: null,
               from: 'boss@example.com',
@@ -119,6 +124,7 @@ function _createMails() {
               subject: 'Feedback Request',
               body: 'We value your feedback. Please take a moment to share your thoughts with us.',
               isRead: false,
+              isStar: false,
               sentAt: Date.now() - 345600000, // 96 hours ago
               removedAt: null,
               from: 'feedback@example.com',
