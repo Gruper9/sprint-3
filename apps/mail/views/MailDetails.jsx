@@ -1,5 +1,6 @@
 
 import { mailService } from "../services/mail.service.js"
+import { MailFolders } from "./MailFolder.jsx"
 
 const { useParams, useNavigate } = ReactRouterDOM
 const { useState, useEffect } = React
@@ -25,13 +26,16 @@ export function MailDetails() {
     }
     if (mailToShow.subject){
     return (
-        <section className="mail-details">
+        <section className="mail-details flex">
+            <MailFolders />
+            <div className="">
               {!mailToShow.isRead && <i className="fa-regular fa-envelope"></i>}  
             {mailToShow.isRead && <i className="fa-regular fa-envelope-open"></i>}
             <h2>{mailToShow.subject}</h2>
             <p>{mailToShow.body}</p>
             <h4>from: {mailToShow.from}</h4>
             <button onClick={() => navigate('/mail')}>back</button>
+            </div>
         </section>
     )}else {
         return (<span className="loader"></span>)
