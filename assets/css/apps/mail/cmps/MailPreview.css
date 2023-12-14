@@ -1,3 +1,20 @@
 .fa-star.fa-solid{
     color: rgb(253, 253, 127);
 }
+
+.mail-preview{
+    padding: 0.5em;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.mail-preview:hover{
+    border: 1px solid #000000;
+    font-weight: bold;
+
+}
+.mail-item{
+    
+    width: 100%;
+}

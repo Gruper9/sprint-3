@@ -1,3 +1,13 @@
  /* mail index  */
  @import '../cmps/MailList.css';
- @import '../cmps/MailPreview.css'
+ @import '../cmps/MailPreview.css';
+
+
+.mail-index{
+    background-color: rgba(228, 227, 227, 0.249);
+    border-radius: 20px;
+    height: 100dvh;
+    width: 100dvw;
+
+    ;
+ }
