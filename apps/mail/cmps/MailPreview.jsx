@@ -22,10 +22,10 @@ export function MailPreview({ mail, onRemoveMail, setReadMail, setMailStar,mailR
             <span className="mail-subject" >{mail.subject}</span>
             <span className="mail-body" >{mail.body}</span>
             </div>
-            {mailRead ?<i className="fa-regular fa-envelope-open " onClick={() => updateMailRead(mail)} ></i> : <i className="fa-regular fa-envelope " onClick={() => updateMailRead(mail)}></i>}
+            {mailRead ?<i className="fa-regular fa-envelope-open" title="mark as unread" onClick={() => updateMailRead(mail)} ></i> : <i className="fa-regular fa-envelope" title="mark as read" onClick={() => updateMailRead(mail)}></i>}
            
     
-             <button classname="delete-btn" onClick={() => onRemoveMail(mail.id)}>x</button>
+             <button classname="delete-btn" title="remove mail" onClick={() => onRemoveMail(mail.id)}>x</button>
         </section>
     )
 
