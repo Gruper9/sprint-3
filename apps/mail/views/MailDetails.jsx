@@ -27,10 +27,11 @@ export function MailDetails() {
     if (mailToShow.subject){
     return (
         <section className="mail-details flex">
-            <MailFolders />
             <div className="">
-              {!mailToShow.isRead && <i className="fa-regular fa-envelope"></i>}  
-            {mailToShow.isRead && <i className="fa-regular fa-envelope-open"></i>}
+            {mailToShow.isStar ?<i className="fa-solid fa-star" ></i> : <i className="fa-regular fa-star" ></i>}
+            {mailToShow.isRead ?<i className="fa-regular fa-envelope-open "  ></i> : <i className="fa-regular fa-envelope " ></i>}
+              {/* {!mailToShow.isRead && <i className="fa-regular fa-envelope"></i>}  
+            {mailToShow.isRead && <i className="fa-regular fa-envelope-open"></i>} */}
             <h2>{mailToShow.subject}</h2>
             <p>{mailToShow.body}</p>
             <h4>from: {mailToShow.from}</h4>

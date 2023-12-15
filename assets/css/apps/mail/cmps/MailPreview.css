@@ -64,4 +64,17 @@
   .delete-btn:hover {
     background-color: #e74c3c; /* Darker red on hover, you can change it */
   }
+  .fa-solid{
+    color: rgba(255, 174, 0, 0.466);
+  }
+
+
+  .read {
+    background-color: #f9f9f9; /* Example background color for read emails */
+  }
+  
+  .unread {
+    background-color: #fff; /* Example background color for unread emails */
+    font-weight: bold; /* Example style for unread emails, you can customize this */
+  }
   
