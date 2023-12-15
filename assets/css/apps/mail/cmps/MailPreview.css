@@ -78,3 +78,21 @@
     font-weight: bold; /* Example style for unread emails, you can customize this */
   }
   
+  /* Media query for screens less than or equal to 768px */
+/* Media query for screens less than or equal to 768px */
+@media (max-width: 768px) {
+  .mail-preview {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start of the container */
+  }
+
+  .mail-preview i,
+  .mail-info {
+    margin-right: 0; /* Remove margin for icons and mail info */
+  }
+
+  .delete-btn {
+    order: 1; /* Move the delete button to the end of the row */
+    margin-top: 10px; /* Optional: Add margin for better spacing */
+  }
+}
