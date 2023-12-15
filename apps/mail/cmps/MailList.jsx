@@ -21,6 +21,10 @@ export function MailList({ mails, loadMails }) {
         mail.isRead = true
         mailService.save(mail).then(() => navigate(`/mail/${mail.id}`))
     }
+    function mailReadUnread(mail){
+        mail.isRead =!mail.isRead 
+        mailService.save(mail)
+    }
 
     function setMailStar(mail) {
         mail.isStar =!mail.isStar 
@@ -33,12 +37,9 @@ export function MailList({ mails, loadMails }) {
         <section className="mail-list">
 
             {mails && mails.map((mail) => (
-                
-                    <MailPreview key={mail.id} mail={mail} onRemoveMail={onRemoveMail} setReadMail={setReadMail}  setMailStar={setMailStar}/>
-                
+                    <MailPreview key={mail.id} mail={mail} mailReadUnread={mailReadUnread} onRemoveMail={onRemoveMail} setReadMail={setReadMail}  setMailStar={setMailStar}/>
             ))
             }
-
         </section>
     )
 }

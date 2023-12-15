@@ -1,17 +1,53 @@
-.fa-star.fa-solid{
-    color: rgb(253, 253, 127);
-}
-
-.mail-preview{
-    padding: 0.5em;
-    border: 1px solid grey;
-    border-radius: 11px;
+.mail-preview {
     display: flex;
-    background-color: #98989815;
-    width: 98%;
-}
-.mail-preview:hover{
-    border: 1px solid #000000;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Add a border between each mail preview */
+  
+    /* Optional: Add styles for hover effect */
+    transition: background-color 0.3s ease;
+  }
+  
+  .mail-preview:hover {
+    background-color: #f0f0f0; /* Change the background color on hover */
+  }
+  
+  .mail-preview i {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .mail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+  }
+  
+  .mail-info span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .mail-subject {
     font-weight: bold;
-    background-color: #9898984a;
-}
+  }
+  
+  .mail-body {
+    color: #777;
+  }
+  
+  /* Optional: Style the close (x) button */
+  .mail-preview button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Optional: Style the close (x) button on hover */
+  .mail-preview button:hover {
+    color: #333;
+  }

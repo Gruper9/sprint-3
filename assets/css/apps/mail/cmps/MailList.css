@@ -1,6 +1,8 @@
  /* mail list */
  .mail-list{
     width: 100%;
+    border-radius: 20px;
+    background-color: rgba(133, 133, 133, 0.017);
  }
  .mail-list-continer{
     width: 100%;
