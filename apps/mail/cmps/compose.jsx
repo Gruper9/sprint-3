@@ -27,7 +27,7 @@ export function Compose(){
                 break;
         }
 
-        setmailToEdit(prevMail => ({ ...prevMail, [field]: value }))
+        setmailToEdit(prevMail => ({ ...prevMail, [field]: value ,from: mailService.getCurrUserLogged()}))
     }
     function onSaveMail(ev) {
         ev.preventDefault()
@@ -49,7 +49,13 @@ export function Compose(){
         <label htmlFor="subject">subject: </label>
         <input onChange={handleChange} value={mailToEdit.subject} type="text" name="subject" id="subject" />
 
-        <input onChange={handleChange} value={mailToEdit.body} type="text" name="body" id="body" />
+        <textarea
+  onChange={handleChange}
+  value={mailToEdit.body}
+  name="body"
+  id="body"
+  rows="5" // You can adjust the number of rows as needed
+></textarea>
 
        
         <button disabled={!mailToEdit.subject}>Save</button>

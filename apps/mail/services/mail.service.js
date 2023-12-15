@@ -17,11 +17,14 @@ export const mailService = {
     query,
     getEmptyMail,
     getDefaultFilter,
-    getFolders
+    getFolders,
+    getCurrUserLogged
 }
 _createMails()
 
-
+function getCurrUserLogged(){
+    return logedInUser.email
+}
 function getFolders(){
     return folders
 }

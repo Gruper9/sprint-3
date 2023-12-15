@@ -25,7 +25,7 @@ export function MailPreview({ mail, onRemoveMail, setReadMail, setMailStar,mailR
             {mailRead ?<i className="fa-regular fa-envelope-open " onClick={() => updateMailRead(mail)} ></i> : <i className="fa-regular fa-envelope " onClick={() => updateMailRead(mail)}></i>}
            
     
-             <button onClick={() => onRemoveMail(mail.id)}>x</button>
+             <button classname="delete-btn" onClick={() => onRemoveMail(mail.id)}>x</button>
         </section>
     )
 

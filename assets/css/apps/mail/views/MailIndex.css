@@ -1,6 +1,7 @@
  /* mail index  */
  @import '../cmps/MailList.css';
  @import '../cmps/MailPreview.css';
+ @import '../cmps/compose.css';
 
 
 .mail-index{
