@@ -33,7 +33,7 @@ export function MailIndex() {
         return (
             <section className="mail-index">
                 <div className="main-layout flex ">
-                    {/* <MailFolders /> */}
+                    <MailFolders />
                     <div className="mail-list-continer">
                             <button >
                                 <Link to="/mail/compose">Compose</Link>

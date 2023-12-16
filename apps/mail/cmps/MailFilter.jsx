@@ -42,7 +42,7 @@ export function MailFilter({ filterBy, onSetFilter }) {
     return (
         <section className="mail-filter">
            
-            <form onSubmit={onSetFilterBy} >
+            <form onSubmit={onSetFilterBy} className="search-mail">
                 <input value={txt} onChange={handleChange} type="text"  name="txt" placeholder="search in your inbox"/>
     
             </form>

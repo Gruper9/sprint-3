@@ -5,6 +5,7 @@ import { utilService } from "../../../services/util.service.js"
 
 const MAIL_KEY = 'mailDB'
 const folders=['Inbox','Sent','Trash','Starred','Drafts']
+
 const logedInUser={
     email: 'gruper@test.lol',
     fullName: 'Hadar Gruper'
