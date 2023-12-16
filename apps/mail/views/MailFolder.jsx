@@ -12,7 +12,7 @@ export function MailFolders() {
        if(!folders.length)return 
     return (
         <div className="mail-folder flex column">
-       { folders.map((folder)=><a href={`#/${folder}`} key={folder}>{folder}</a>)}
+       { folders.map((folder)=><a href={`#/mail/${folder}`} key={folder}>{folder}</a>)}
         </div>
       )
 

@@ -20,7 +20,7 @@ export function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/mail" element={<MailIndex />} />   
+                <Route path="/mail/:mailFolder" element={<MailIndex />} />   
                 <Route path="/mail/compose" element={<Compose />} />
                 <Route path="/mail/:mailId" element={<MailDetails />} />
                 <Route path="/note" element={<NoteIndex />} />
